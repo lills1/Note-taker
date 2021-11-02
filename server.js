@@ -26,6 +26,11 @@ app.get('/api/notes', function (req, res) {
     res.json(db)
 })
 
+app.delete('/api/notes/*', function (req, res) {
+    res.send('Got a DELETE request at /user');
+    console.log(`Got a DELETE request at ${req.path}`)
+})
+
 app.post('/api/notes', function (req, res) {
     console.log(req.body)
     db.push(req.body)
