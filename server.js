@@ -26,10 +26,19 @@ app.get('/api/notes', function (req, res) {
     res.json(db)
 })
 
-app.delete('/api/notes/*', function (req, res) {
-    res.send('Got a DELETE request at /user');
-    console.log(`Got a DELETE request at ${req.path}`)
+app.delete(`/api/notes/:id`, function (req, res) {
+    //console.log(req);
+    //extract the ID /index to delete from  req.params['id']
+    console.log(`id is:${req.params['id']}`);
+    console.log(`orig db is:${db}`);
+    //check if index exists (if not do nothing)
+    if (db.length > req.params['id']) {
+        db.splice(req.params['id'], 1);
+        fs.writeFileSync('./db/db.json', JSON.stringify(db, null, 2))
+        res.json(db)
+    }
 })
+
 
 app.post('/api/notes', function (req, res) {
     console.log(req.body)
