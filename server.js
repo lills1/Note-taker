@@ -32,6 +32,7 @@ app.delete(`/api/notes/:id`, function (req, res) {
     console.log(`id is:${req.params['id']}`);
     console.log(`orig db is:${db}`);
     //check if index exists (if not do nothing)
+    db.filter(note => note.id !== req.params["id"])
     if (db.length > req.params['id']) {
         db.splice(req.params['id'], 1);
         fs.writeFileSync('./db/db.json', JSON.stringify(db, null, 2))
@@ -42,7 +43,7 @@ app.delete(`/api/notes/:id`, function (req, res) {
 
 app.post('/api/notes', function (req, res) {
     console.log(req.body)
-    db.push(req.body)
+    db.push(req.body, id)
     fs.writeFileSync('./db/db.json', JSON.stringify(db, null, 2))
     res.json(db)
 })
