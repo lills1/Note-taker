@@ -22,7 +22,7 @@
   - node.js
   - express.js
  ## Extensions
--Complete delete button
+- Complete delete button
 - customisable order
 - Allow editing
 ## Contribution

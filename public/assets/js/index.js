@@ -67,9 +67,11 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
+  //alert("noteListItems:" + noteListItems);
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
+    id: noteTitle.value
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();

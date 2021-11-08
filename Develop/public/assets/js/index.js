@@ -67,9 +67,11 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
+  alert("db:" + db);
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
+    id: db.length
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
