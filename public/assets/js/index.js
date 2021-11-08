@@ -68,10 +68,12 @@ const renderActiveNote = () => {
 
 const handleNoteSave = () => {
   //alert("noteListItems:" + noteListItems);
+  const secondsSinceEpoch = Math.round(Date.now() / 1000);
+  // alert("secondsSinceEpoch:" + secondsSinceEpoch);
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
-    id: noteTitle.value
+    id: secondsSinceEpoch  // noteTitle.value
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
