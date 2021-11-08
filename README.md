@@ -11,11 +11,12 @@
   - [Contributing](#contribution)
   - [Questions](#questions)
   ## Usage
-  Simply follow the link provided
+  Simply follow the link provided here: </br>
+  https://morning-headland-57780.herokuapp.com/
   ## License
   MIT
   ## Preview
- 
+ Follow this link for a demo: https://drive.google.com/file/d/1CEcOotUBN3epGtF6F44SxiJnPIugWEJS/view?usp=sharing
   ## Technologies
   - HTML
   - Javascript
