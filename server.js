@@ -42,7 +42,7 @@ app.delete(`/api/notes/:id`, function (req, res) {
 
 app.post('/api/notes', function (req, res) {
     console.log(req.body)
-    db.push(req.body, id)
+    db.push(req.body)
     fs.writeFileSync('./db/db.json', JSON.stringify(db, null, 2))
     res.json(db)
 })
